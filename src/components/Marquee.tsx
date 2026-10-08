@@ -24,8 +24,8 @@ const Marquee = async () => {
   };
 
   return (
-    <div className="w-full overflow-hidden border-y border-[#e9f0e9]">
-      <MarqueeText direction="right">
+    <div className="w-full overflow-hidden border-y border-[#e9f0e9] cursor-pointer">
+      <MarqueeText direction="right" duration={12} pauseOnHover={true}>
         {data.map((marq) => (
           <div
             key={marq.id}

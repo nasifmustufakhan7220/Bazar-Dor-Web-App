@@ -27,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Header/>
           <NavLinks/>
           <Marquee/>
-        <main className="">{children}</main>
+        <main className="max-w-240 mx-auto">{children}</main>
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 import { IMarqueeText } from "@/bazarDor.types";
 import Image from "next/image";
+import Link from "next/link";
 
 const ProductCard = ({ card }: { card: IMarqueeText }) => {
   const convertText: Record<string, string> = {
@@ -9,7 +10,8 @@ const ProductCard = ({ card }: { card: IMarqueeText }) => {
     piece: "পিস",
   };
   return (
-    <div className="cursor-pointer w-full rounded-[18px] border border-[#dce4dd] bg-[#f9fbf9] px-4.5 py-4.5">
+   <Link href={`/products/${card.id}`}>
+     <div className="cursor-pointer w-full rounded-[18px] border border-[#dce4dd] bg-[#f9fbf9] px-4.5 py-4.5">
       <div className="flex h-full flex-col justify-between">
         {/* Top Section */}
         <div className="flex items-center gap-4">
@@ -80,6 +82,8 @@ const ProductCard = ({ card }: { card: IMarqueeText }) => {
         </div>
       </div>
     </div>
+   
+   </Link>
   );
 };
 

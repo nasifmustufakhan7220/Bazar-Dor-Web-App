@@ -9,7 +9,7 @@ const TodayUpPrices = async() => {
     const increaseProducts = topIncreaseProducts.filter(increase=> increase.change.dir==="up");
     const topSix = increaseProducts.sort((a,b)=>b.change.pct - a.change.pct).slice(0,6);
     return (
-        <div className="mt-10">
+        <div className="mt-10 mx-auto max-w-5xl">
             <div className="flex gap-1 items-center mb-3">
                 <p><Image src="/▲.png" alt="" width={10} height={10}/></p>
                 <h2 className="font-bold text-[20px]">আজ দাম বেড়েছে</h2>

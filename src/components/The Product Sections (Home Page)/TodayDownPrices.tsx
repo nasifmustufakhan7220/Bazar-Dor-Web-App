@@ -13,7 +13,7 @@ const TodayDownPrices = async() => {
         <div className="mt-10">
             <div className="flex gap-1 items-center mb-3">
                 <p><Image src="/▼.png" alt="" width={10} height={10}/></p>
-                <h2 className="font-bold text-[20px]">আজ দাম বেড়েছে</h2>
+                <h2 className="font-bold text-[20px]">আজ দাম কমেছে</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">

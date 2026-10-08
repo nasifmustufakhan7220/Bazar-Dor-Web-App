@@ -1,4 +1,5 @@
 import { IMarqueeText } from "@/bazarDor.types";
+import Image from "next/image";
 
 const ProductCard = ({ card }: { card: IMarqueeText }) => {
   return (
@@ -39,9 +40,9 @@ const ProductCard = ({ card }: { card: IMarqueeText }) => {
 
           {/* Percentage */}
           <div className="flex items-center gap-1.5 rounded-full bg-[#f0f5f1] px-3 py-1.5">
-            <span className="text-[13px] font-bold text-red-500">▲</span>
+            <span className="text-[13px] font-bold">{card.change.dir === "up" ? <><Image src="/▲.png" alt="" width={10} height={10}/></> : <><Image src="/▼.png" alt="" width={10} height={10}/></>}</span>
 
-            <span className="text-[13px] font-bold text-red-500">
+            <span className={`text-[13px] font-bold ${card.change.dir === 'up' ? "text-red-500" : "text-green-500"}`}>
               {card.change.pct}%
             </span>
           </div>

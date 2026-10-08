@@ -10,8 +10,8 @@ const NavLinks = async () => {
   const data: INavlink[] = await res.json();
 
   return (
-    <div className="mt-8 w-full border-t border-[#e9f0e9]">
-      <div className="mx-auto flex w-full max-w-250">
+    <div className="mx-auto mt-8 w-full max-w-240 py-4 overflow-x-auto border-t border-[#e9f0e9]">
+      <div className="flex min-w-max items-center px-4 sm:px-0">
         {data.map((li) => (
           <ActiveNavLink key={li.id} li={li} />
         ))}

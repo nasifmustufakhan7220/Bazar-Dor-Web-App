@@ -1,6 +1,24 @@
 import { IMarqueeText } from "@/bazarDor.types";
+import Image from "next/image";
 
 const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
+  const priceSummary = [
+    {
+      title: "সর্বনিম্ন দাম",
+    },
+    {
+      title: "সর্বাধিক দাম",
+    },
+    {
+      title: "গড় দাম",
+    },
+  ];
+  console.log(data);
+  const toBangla = (number: number) => {
+    return number
+      .toString()
+      .replace(/\d/g, (digit) => "০১২৩৪৫৬৭৮৯"[Number(digit)]);
+  };
   const convertText: Record<string, string> = {
     dozen: "ডজন",
     liter: "লিটার",
@@ -25,7 +43,9 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
                   {data.nameBn}
                 </h1>
 
-                <p className="text-xs text-gray-500">প্রতি {convertText[data.unit]} {data.categoryNameBn} </p>
+                <p className="text-xs text-gray-500">
+                  প্রতি {convertText[data.unit]} {data.categoryNameBn}{" "}
+                </p>
 
                 <p className="mt-1 text-xs text-gray-600">
                   সর্বশেষ আপডেট পাওয়া বাজার দর • ১ কেজি
@@ -38,11 +58,24 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
               <p className="text-[10px] text-gray-500">আজকের দাম</p>
 
               <p className="mt-1 text-sm font-semibold text-gray-700">
-                টাকা / কেজি
+                টাকা / {convertText[data.unit]}
               </p>
 
               <div className="mt-1 flex items-center justify-center gap-1">
-                <span className="text-sm font-bold text-red-500">▲ ৫.৮%</span>
+                <div
+                  className={`text-sm flex items-center font-bold ${data.change.dir === "up" ? "text-red-500" : "text-green-500"}`}
+                >
+                  {data.change.dir !== "up" ? (
+                    <p>
+                      <Image src="/▼.png" alt="" width={10} height={10} />
+                    </p>
+                  ) : (
+                    <p>
+                      <Image src="/▲.png" alt="" width={10} height={10} />
+                    </p>
+                  )}{" "}
+                  {toBangla(data.change.pct)}%
+                </div>
               </div>
             </div>
           </div>
@@ -54,7 +87,28 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
             দামের সারাংশপ্রেক্ষণ
           </h2>
 
-          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3"></div>
+          <div  className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+            {data.markets.map((price) => (
+              <div key={price.market}>
+                <div className="w-full rounded-3xl border border-[#dce5dd] bg-[#fbfdfb] px-9 py-6">
+                  <p className="text-base font-normal text-[#26332c]">
+                    {data.change.dir === "up" ? "" : ""}
+                  </p>
+                  <div className="mt-1 flex items-baseline gap-1">
+                    <span className="text-3xl font-bold leading-tight text-[#169b50]">
+                      ৫৯
+                    </span>
+                    <span className="text-xl font-normal text-[#169b50]">
+                      টাকা
+                    </span>
+                  </div>
+                  <p className="mt-1 text-base font-normal text-[#26332c]">
+                    সবচেয়ে কম দামের বাজার
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
 
           {/* ================= TABLE ================= */}
           <div className="mt-5">

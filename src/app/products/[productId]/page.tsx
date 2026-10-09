@@ -6,7 +6,7 @@ export const instant = false
 const ProductDetailsPage = async({params}:{params:Promise<{productId:string}>}) => {
     const {productId} = await params;
     
-    const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productId}`);
+    const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products/${productId}`);
     const data:IMarqueeText = await res.json();
     
     return (

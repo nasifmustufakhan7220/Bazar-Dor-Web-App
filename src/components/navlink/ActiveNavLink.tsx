@@ -10,11 +10,11 @@ const ActiveNavLink = ({ li }: { li: INavlink }) => {
   return (
     <Link
       className={`flex shrink-0 cursor-pointer gap-1 whitespace-nowrap p-2 ${
-        pathname === `/${li.slug}`
+        pathname === `/category/${li.slug}`
           ? "rounded-xl bg-[#048039] p-2 text-[#f2faf3]"
           : ""
       }`}
-      href={`/${li.slug}`}
+      href={`/category/${li.slug}`}
       key={li.id}
     >
       {li.icon}

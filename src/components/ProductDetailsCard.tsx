@@ -90,7 +90,7 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
                     <p>
                       <Image src="/▲.png" alt="" width={10} height={10} />
                     </p>
-                  )}{" "}
+                  )}
                   {toBangla(data.change.pct)}%
                 </div>
               </div>

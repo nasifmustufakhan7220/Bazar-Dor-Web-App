@@ -103,7 +103,6 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
           <h2 className="mb-3 text-sm font-bold text-[#26332a]">
             দামের সারসংক্ষেপ
           </h2>
-
           <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
             {priceSummary.map((item) => (
               <div
@@ -133,35 +132,91 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
             ))}
           </div>
 
-          {/* ================= TABLE ================= */}
-
-          {/* ================= TABLE ================= */}
-          <div className="mt-5">
-            <h2 className="mb-3 text-sm font-bold text-[#26332a]">
+          {/* ================= RESPONSIVE TABLE ================= */}
+          <div className="mt-6">
+            <h2 className="mb-4 text-sm font-bold text-[#26332a] sm:text-base">
               বাজারভিত্তিক আজকের দাম
             </h2>
 
-            <div className="overflow-x-auto rounded-xl border border-[#dfe8df]">
-              <table className="w-full `min-w-162.5 table-fixed border-collapse text-xs">
+            {/* Mobile View: Card Layout */}
+            <div className="grid grid-cols-1 gap-3 md:hidden">
+              {data.markets.map((item, index) => (
+                <div
+                  key={index}
+                  className="overflow-hidden rounded-xl border border-[#dfe8df] bg-white shadow-sm"
+                >
+                  {/* Market Name */}
+                  <div className="flex items-center justify-between gap-3 border-b border-[#e8eee8] bg-[#f7faf7] px-4 py-3">
+                    <div className="min-w-0">
+                      <h3 className="truncate text-sm font-bold text-[#26332a]">
+                        {item.market}
+                      </h3>
+                      <p className="mt-1 text-xs text-gray-500">
+                        জেলা: {item.division}
+                      </p>
+                    </div>
+
+                    <span className="shrink-0 rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                      বাজার দর
+                    </span>
+                  </div>
+
+                  {/* Price Details */}
+                  <div className="grid grid-cols-3 divide-x divide-[#e8eee8] px-2 py-4">
+                    <div className="min-w-0 px-1 text-center">
+                      <p className="text-[11px] text-gray-500 sm:text-xs">
+                        সর্বনিম্ন
+                      </p>
+                      <p className="mt-2 wrap-break-word text-sm font-semibold text-green-700 sm:text-base">
+                        {toBangla(item.min)}
+                      </p>
+                      <p className="text-[11px] text-gray-500">টাকা</p>
+                    </div>
+
+                    <div className="min-w-0 px-1 text-center">
+                      <p className="text-[11px] text-gray-500 sm:text-xs">
+                        সর্বাধিক
+                      </p>
+                      <p className="mt-2 wrap-break-word text-sm font-semibold text-red-600 sm:text-base">
+                        {toBangla(item.max)}
+                      </p>
+                      <p className="text-[11px] text-gray-500">টাকা</p>
+                    </div>
+
+                    <div className="min-w-0 px-1 text-center">
+                      <p className="text-[11px] text-gray-500 sm:text-xs">গড়</p>
+                      <p className="mt-2 wrap-break-word text-sm font-bold text-[#26332a] sm:text-base">
+                        {toBangla((item.min + item.max) / 2)}
+                      </p>
+                      <p className="text-[11px] text-gray-500">টাকা</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Tablet & Desktop View: Table Layout */}
+            <div className="hidden overflow-x-auto rounded-xl border border-[#dfe8df] md:block">
+              <table className="w-full min-w-162.5 table-fixed border-collapse text-sm">
                 <thead>
                   <tr className="bg-[#f7faf7] text-gray-500">
-                    <th className="w-[28%] px-3 py-3 text-left font-medium">
+                    <th className="w-[28%] px-4 py-4 text-left font-medium">
                       বাজার
                     </th>
 
-                    <th className="w-[18%] px-3 py-3 text-left font-medium">
+                    <th className="w-[18%] px-4 py-4 text-left font-medium">
                       জেলা
                     </th>
 
-                    <th className="w-[18%] px-3 py-3 text-right font-medium">
+                    <th className="w-[18%] px-4 py-4 text-right font-medium">
                       সর্বনিম্ন
                     </th>
 
-                    <th className="w-[18%] px-3 py-3 text-right font-medium">
+                    <th className="w-[18%] px-4 py-4 text-right font-medium">
                       সর্বাধিক
                     </th>
 
-                    <th className="w-[18%] px-3 py-3 text-right font-medium">
+                    <th className="w-[18%] px-4 py-4 text-right font-medium">
                       গড়
                     </th>
                   </tr>
@@ -171,27 +226,27 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
                   {data.markets.map((item, index) => (
                     <tr
                       key={index}
-                      className={`border-t border-[#dfe5df] ${
-                        index % 2 === 0 ? "bg-white" : "bg-[#f1f5f1]"
+                      className={`border-t border-[#dfe5df] transition-colors hover:bg-[#edf5ed] ${
+                        index % 2 === 0 ? "bg-white" : "bg-[#f8faf8]"
                       }`}
                     >
-                      <td className="truncate px-3 py-2.5 text-left text-gray-700">
+                      <td className="truncate px-4 py-4 text-left text-gray-700">
                         {item.market}
                       </td>
 
-                      <td className="truncate px-3 py-2.5 text-left text-gray-700">
+                      <td className="truncate px-4 py-4 text-left text-gray-700">
                         {item.division}
                       </td>
 
-                      <td className="whitespace-nowrap px-3 py-2.5 text-right text-gray-700">
+                      <td className="whitespace-nowrap px-4 py-4 text-right font-medium text-green-700">
                         {toBangla(item.min)} টাকা
                       </td>
 
-                      <td className="whitespace-nowrap px-3 py-2.5 text-right text-gray-700">
+                      <td className="whitespace-nowrap px-4 py-4 text-right font-medium text-red-600">
                         {toBangla(item.max)} টাকা
                       </td>
 
-                      <td className="whitespace-nowrap px-3 py-2.5 text-right text-gray-700 font-bold">
+                      <td className="whitespace-nowrap px-4 py-4 text-right font-bold text-[#26332a]">
                         {toBangla((item.min + item.max) / 2)} টাকা
                       </td>
                     </tr>
@@ -200,6 +255,7 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
               </table>
             </div>
           </div>
+         
         </div>
       </div>
     </section>

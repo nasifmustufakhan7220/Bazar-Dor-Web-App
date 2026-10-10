@@ -1,4 +1,4 @@
-import { IMarqueeText } from "@/bazarDor.types";
+import { IMarqueeText } from "@/types/bazarDor.types";
 import ProductCard from "./productsCard/ProductCard";
 
 

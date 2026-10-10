@@ -1,6 +1,6 @@
 "use client";
 
-import { INavlink } from "@/bazarDor.types";
+import { INavlink } from "@/types/bazarDor.types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

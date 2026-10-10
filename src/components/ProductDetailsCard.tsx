@@ -1,4 +1,4 @@
-import { IMarqueeText } from "@/bazarDor.types";
+import { IMarqueeText } from "@/types/bazarDor.types";
 import Image from "next/image";
 
 const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {

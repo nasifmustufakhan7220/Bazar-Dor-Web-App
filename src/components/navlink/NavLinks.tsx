@@ -1,4 +1,4 @@
-import { INavlink } from "@/bazarDor.types";
+import { INavlink } from "@/types/bazarDor.types";
 import ActiveNavLink from "./ActiveNavLink";
 import { Suspense } from "react";
 import NavbarSkeleton from "./NavbarSkeleton";

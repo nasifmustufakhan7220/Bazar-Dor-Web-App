@@ -1,4 +1,4 @@
-import { IMarqueeText } from "@/bazarDor.types";
+import { IMarqueeText } from "@/types/bazarDor.types";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";

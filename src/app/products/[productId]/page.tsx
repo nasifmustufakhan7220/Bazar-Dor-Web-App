@@ -1,4 +1,4 @@
-import { IMarqueeText } from "@/bazarDor.types";
+import { IMarqueeText } from "@/types/bazarDor.types";
 import ProductDetailsCard from "@/components/ProductDetailsCard";
 
 export const instant = false

@@ -1,4 +1,4 @@
-import { IMarqueeText } from '@/bazarDor.types';
+import { IMarqueeText } from '@/types/bazarDor.types';
 import Image from 'next/image';
 import React from 'react';
 import ProductCard from './productsCard/ProductCard';

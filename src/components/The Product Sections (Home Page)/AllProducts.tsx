@@ -3,7 +3,7 @@ import ProductCard from "./productsCard/ProductCard";
 
 
 const AllProducts = async() => {
-    const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products", {next:{revalidate:60}});
+    const res = await fetch("https://openapi.programming-hero.com/api/bazardor/products", {next:{revalidate:60}});
     const allProducts:IMarqueeText[] = await res.json();
     return (
          <div className="mt-10 mx-auto max-w-5xl">

@@ -246,11 +246,11 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
                         {toBangla(item.min)} টাকা
                       </td>
 
-                      <td className="whitespace-nowrap px-4 py-4 text-right font-medium text-red-600">
+                      <td className="whitespace-nowrap px-4 py-4 text-right text-base font-semibold text-green-700">
                         {toBangla(item.max)} টাকা
                       </td>
 
-                      <td className="whitespace-nowrap px-4 py-4 text-right font-bold text-[#26332a]">
+                      <td className="whitespace-nowrap px-4 py-4 text-right text-base font-semibold text-green-700">
                         {toBangla((item.min + item.max) / 2)} টাকা
                       </td>
                     </tr>

@@ -1,10 +1,10 @@
 "use client";
 import { useSession, signOut, updateUser } from "@/lib/auth-client";
-import Image from "next/image";
 
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { FaSignOutAlt } from "react-icons/fa";
+import { FaRegCircleUser } from "react-icons/fa6";
 import { toast } from "react-toastify";
 
 const ProfilePage = () => {
@@ -66,25 +66,17 @@ const ProfilePage = () => {
 
             {/* Profile Card */}
             <section className="mb-4 flex flex-col items-start justify-between gap-4 rounded-xl border border-[#e0e8e0] bg-[#fbfdfb] p-4 sm:flex-row sm:items-center sm:px-5 sm:py-4">
-              <div className="flex items-center gap-3">
-                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-gray-100">
-                  <Image
-                    src="/profile.png"
-                    alt="Profile picture"
-                    fill
-                    sizes="56px"
-                    className="object-cover"
-                  />
-                </div>
-
-                <div>
-                  <h2 className="text-base font-semibold text-[#26312a]">
-                    {data?.user.name}
-                  </h2>
-
-                  <p className="text-sm text-gray-500">{data?.user.email}</p>
-                </div>
-              </div>
+              <div className="flex cursor-pointer items-center justify-center gap-2.5 rounded-full px-2 py-1.5">
+                      <div className="flex h-10.5 w-10.5 items-center justify-center rounded-full">
+                        <FaRegCircleUser className="text-2xl" />
+                      </div>
+              
+                      <span className="text-base font-medium text-[#26332c]">
+                        {data?.user.name.split(" ").slice(0, 1)}
+                      </span>
+              
+                      
+                    </div>
 
               <button
                 type="button"

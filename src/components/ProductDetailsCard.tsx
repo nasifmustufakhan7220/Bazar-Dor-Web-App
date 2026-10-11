@@ -19,9 +19,10 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
   };
 
   const toBangla = (number: number) => {
-    return number
-      .toString()
-      .replace(/\d/g, (digit) => "০১২৩৪৫৬৭৮৯"[Number(digit)]);
+    return new Intl.NumberFormat("bn-BD", {
+    useGrouping: false,
+    maximumFractionDigits: 2,
+  }).format(number);
   };
 
   const priceSummary = [

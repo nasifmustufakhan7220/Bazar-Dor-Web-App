@@ -21,7 +21,7 @@ const Category = async ({
 
   const data:IMarqueeText[] = await res.json();
 
-  if(data.length === 0){
+  if(data.length === 0 || !Array.isArray(data)){
     return <EmptyState/>
   }
   

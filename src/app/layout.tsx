@@ -5,7 +5,6 @@ import Header from "../components/signInAndSignUp/Header";
 import NavLinks from "@/components/navlink/NavLinks";
 import Marquee from "@/components/Marquee";
 import Footer from "@/components/Footer";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.css";
 
 const HindSiliguri = Hind_Siliguri({
@@ -27,20 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${HindSiliguri.className} h-full antialiased`}
     >
       <body className="min-h-full bg-[#f0f5f0] flex flex-col">
-        <ToastContainer
-          position="top-right"
-          autoClose={3500}
-          hideProgressBar={false}
-          newestOnTop
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-          toastClassName="bazar-toast"
-          className="bazar-toast-container"
-        />
+        
         <Header />
         <NavLinks />
         <Marquee />

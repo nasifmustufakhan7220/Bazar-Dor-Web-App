@@ -9,7 +9,7 @@ const AllProducts = async() => {
          <div className="mt-10 mx-auto max-w-5xl">
                     <div className="mb-3">
                         <h2 className="font-bold text-[20px]">সব পণ্য</h2>
-                        <p>মোট {allProducts.length.toString().replace(/\d/g, (digit)=> "০১২৩৪৫৬৭৮৯"[Number(digit)])}টি পণ্য দেখানো হচ্ছে</p>
+                        <p className="mb-5">মোট {allProducts.length.toString().replace(/\d/g, (digit)=> "০১২৩৪৫৬৭৮৯"[Number(digit)])}টি পণ্য দেখানো হচ্ছে</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                             {

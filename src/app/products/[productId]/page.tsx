@@ -20,8 +20,8 @@ const ProductDetailsPage = async ({
   const data: IMarqueeText = await res.json();
 
   return (
-    <div className="mx-auto max-w-5xl">
-      <nav aria-label="Breadcrumb" className="mb-4 ml-8">
+    <div className="mx-auto w-full max-w-6xl px-3 sm:px-4">
+      <nav aria-label="Breadcrumb" className="mb-4 px-1 sm:px-2">
         <ol className="flex flex-wrap items-center gap-2 text-sm text-[#26332a]">
           <li>
             <Link href="/" className="hover:text-green-700">

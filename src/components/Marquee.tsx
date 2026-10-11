@@ -35,9 +35,9 @@ const Marquee = async () => {
             className="group relative inline-flex h-10 shrink-0 items-center"
           >
             {/* Product Information */}
-            <div className="inline-flex h-full items-center gap-1.5 border-r border-[#e9f0e9] px-5 text-[14px] text-[#333]">
+            <div className="inline-flex h-full items-center gap-1.5 border-r border-[#e9f0e9] px-3 text-xs text-[#333] sm:px-5 sm:text-sm">
               {/* Category Icon */}
-              <span className="shrink-0 text-[15px]">
+              <span className="shrink-0 text-sm sm:text-[15px]">
                 {marq.categoryIcon}
               </span>
 
@@ -57,7 +57,7 @@ const Marquee = async () => {
                 <span className="flex shrink-0 items-center text-red-600">
                   <FaCaretUp className="text-[15px]" />
 
-                  <span className="text-[13px] font-semibold">
+                  <span className="text-xs font-semibold sm:text-[13px]">
                     {toBangalaNumber(marq.change.pct)}%
                   </span>
                 </span>
@@ -65,7 +65,7 @@ const Marquee = async () => {
                 <span className="flex shrink-0 items-center text-green-600">
                   <FaCaretDown className="text-[15px]" />
 
-                  <span className="text-[13px] font-semibold">
+                  <span className="text-xs font-semibold sm:text-[13px]">
                     {toBangalaNumber(marq.change.pct)}%
                   </span>
                 </span>

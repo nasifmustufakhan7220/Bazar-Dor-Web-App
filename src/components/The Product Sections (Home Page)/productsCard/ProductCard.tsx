@@ -10,8 +10,8 @@ const ProductCard = ({ card }: { card: IMarqueeText }) => {
     piece: "পিস",
   };
   return (
-   <Link href={`/products/${card.id}`}>
-     <div className="cursor-pointer w-full rounded-[18px] border border-[#dce4dd] bg-[#f9fbf9] px-4.5 py-4.5">
+   <Link href={`/products/${card.id}`} className="block h-full">
+     <div className="h-full w-full cursor-pointer rounded-[18px] border border-[#dce4dd] bg-[#f9fbf9] px-4 py-4 sm:px-4.5 sm:py-4.5">
       <div className="flex h-full flex-col justify-between">
         {/* Top Section */}
         <div className="flex items-center gap-4">
@@ -21,8 +21,8 @@ const ProductCard = ({ card }: { card: IMarqueeText }) => {
           </div>
 
           {/* Product Info */}
-          <div>
-            <h2 className="text-[18px] font-bold leading-[1.2] text-[#202923]">
+          <div className="min-w-0">
+            <h2 className="break-words text-base font-bold leading-[1.2] text-[#202923] sm:text-[18px]">
               {card.nameBn}
             </h2>
 

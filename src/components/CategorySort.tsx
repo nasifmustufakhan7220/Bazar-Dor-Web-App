@@ -26,7 +26,7 @@ const CategorySort = ({ data }: { data: IMarqueeText[] }) => {
   const categorySort = handelSort(data);
   return (
     <div>
-      <section className="mx-auto w-full max-w-5xl space-y-6 px-4 py-7 sm:px-6 lg:px-8">
+      <section className="mx-auto w-full max-w-6xl space-y-6 px-3 py-7 sm:px-4 lg:px-6">
         {/* Header */}
         <div className="flex min-h-26 items-center gap-4 rounded-[20px] border border-[#dce5dc] bg-[#fbfcfb] px-5 py-5 sm:px-7">
           <div className="shrink-0 text-4xl sm:text-5xl">🍚</div>
@@ -56,7 +56,7 @@ const CategorySort = ({ data }: { data: IMarqueeText[] }) => {
             onChange={(e) =>
               setSort(e.target.value as "default" | "price-low" | "price-high")
             }
-            className="cursor-pointer rounded-xl border border-[#cdd6cd] bg-transparent px-3 py-2 text-sm text-[#303830] outline-none transition focus:border-green-600 focus:ring-2 focus:ring-green-100"
+            className="max-w-full cursor-pointer rounded-xl border border-[#cdd6cd] bg-transparent px-3 py-2 text-sm text-[#303830] outline-none transition focus:border-green-600 focus:ring-2 focus:ring-green-100"
           >
             <option value="default">ডিফল্ট</option>
             <option value="price-low">দাম: কম থেকে বেশি</option>
@@ -69,7 +69,7 @@ const CategorySort = ({ data }: { data: IMarqueeText[] }) => {
           মোট {toBangal(data.length)} টি পণ্য দেখানো হচ্ছে
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 lg:grid-cols-3">
           {categorySort.map((c) => (
             <ProductCard key={c.id} card={c} />
           ))}

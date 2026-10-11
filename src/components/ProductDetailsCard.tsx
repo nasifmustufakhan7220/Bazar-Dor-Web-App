@@ -45,7 +45,7 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
 
   return (
     <section className="min-h-screen bg-[#f1f6f1] px-3 py-5 sm:px-5 md:px-6">
-      <div className="w-full space-y-4">
+      <div className="mx-auto w-full max-w-6xl space-y-4">
         {/* ================= PRODUCT HEADER ================= */}
         <div className="rounded-xl border border-[#dfe8df] bg-white p-4 sm:p-5">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -55,8 +55,8 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
                 🍚
               </div>
 
-              <div>
-                <h1 className="text-lg font-bold text-[#26332a] sm:text-xl">
+              <div className="min-w-0">
+                <h1 className="break-words text-lg font-bold text-[#26332a] sm:text-xl">
                   {data.nameBn}
                 </h1>
 
@@ -107,7 +107,7 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
             {priceSummary.map((item) => (
               <div
                 key={item.title}
-                className="w-full rounded-3xl border border-[#dce5dd] bg-[#fbfdfb] px-6 py-6"
+                className="w-full rounded-3xl border border-[#dce5dd] bg-[#fbfdfb] px-4 py-5 sm:px-6 sm:py-6"
               >
                 <p className="text-base font-normal text-[#26332c]">
                   {item.title}

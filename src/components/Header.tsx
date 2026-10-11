@@ -17,7 +17,7 @@ const Header = async () => {
   const date = await updateDate();
 
   return (
-    <div className="mx-auto mt-2 w-full max-w-5xl px-3 sm:px-4 md:px-6">
+    <div className="mx-auto mt-2 w-full max-w-6xl px-3 sm:px-4 md:px-6">
       <div className="flex items-center justify-between gap-2">
         {/* Logo + Brand */}
         <div className="flex min-w-0 items-center gap-2">
@@ -44,11 +44,11 @@ const Header = async () => {
 
         {/* Auth */}
         <div className="flex shrink-0 gap-2 sm:gap-3">
-          <button className="text-[12px] font-semibold sm:text-[14px]">
+          <button className="btn btn-ghost btn-sm px-2 text-[12px] font-semibold sm:btn-md sm:px-3 sm:text-[14px]">
             সাইন ইন
           </button>
 
-          <button className="btn bg-[#068a3f] text-[12px] text-[#f2faf3] sm:text-[14px]">
+          <button className="btn btn-sm bg-[#068a3f] px-3 text-[12px] text-[#f2faf3] sm:btn-md sm:px-4 sm:text-[14px]">
             সাইন আপ
           </button>
         </div>

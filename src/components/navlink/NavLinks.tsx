@@ -12,15 +12,15 @@ const NavLinks = async () => {
   const data: INavlink[] = await res.json();
 
   return (
-    <div className="mx-auto mt-8 w-full max-w-240 py-4 overflow-x-auto border-t border-[#e9f0e9]">
-      <div className="flex min-w-max items-center px-4 sm:px-0">
+    <nav aria-label="পণ্যের বিভাগ" className="mx-auto mt-4 w-full max-w-6xl overflow-x-auto border-t border-[#e9f0e9] py-2 sm:mt-6 sm:py-3">
+      <div className="flex min-w-max items-center gap-1 px-3 sm:px-4">
         {data.map((li) => (
           <Suspense key={li.id} fallback={<NavbarSkeleton/>}>
             <ActiveNavLink li={li} />
           </Suspense>
         ))}
       </div>
-    </div>
+    </nav>
   );
 };
 

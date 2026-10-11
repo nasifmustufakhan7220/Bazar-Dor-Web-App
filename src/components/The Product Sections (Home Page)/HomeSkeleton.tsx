@@ -16,7 +16,7 @@ const HomePageSkeleton = () => {
   ];
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-300 bg-[#f1f6f1] px-3 py-4 sm:px-5 md:px-6">
+    <main className="mx-auto min-h-screen w-full max-w-6xl bg-[#f1f6f1] px-3 py-4 sm:px-4">
       <div className="space-y-5">
         {categories.map((category) => (
           <section key={category.id} className="space-y-2">
@@ -27,7 +27,7 @@ const HomePageSkeleton = () => {
             </div>
 
             {/* Product Cards */}
-            <div className="grid grid-cols-1 gap-2 min-[420px]:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-2 min-[480px]:grid-cols-2 lg:grid-cols-3">
               {Array.from({ length: category.cards }).map((_, index) => (
                 <div
                   key={index}

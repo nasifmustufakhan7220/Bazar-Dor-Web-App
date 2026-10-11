@@ -56,7 +56,7 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
               </div>
 
               <div className="min-w-0">
-                <h1 className="break-words text-lg font-bold text-[#26332a] sm:text-xl">
+                <h1 className="wrap-break-word text-lg font-bold text-[#26332a] sm:text-xl">
                   {data.nameBn}
                 </h1>
 

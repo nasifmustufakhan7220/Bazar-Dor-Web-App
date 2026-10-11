@@ -6,6 +6,7 @@ import NavLinks from "@/components/navlink/NavLinks";
 import Marquee from "@/components/Marquee";
 import Footer from "@/components/Footer";
 import "react-toastify/ReactToastify.css";
+import { Suspense } from "react";
 
 const HindSiliguri = Hind_Siliguri({
   subsets: ["bengali"],
@@ -29,7 +30,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         
         <Header />
         <NavLinks />
+    
+        <Suspense fallback={<p>Loading...</p>}>
         <Marquee />
+        
+        </Suspense>
         <main className="">{children}</main>
         
         <Footer />

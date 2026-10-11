@@ -10,6 +10,8 @@ const Profile = () => {
     signOut();
   };
 
+  console.log(data);
+
   return (
     <div className="group relative">
       {/* Profile Button */}

@@ -16,6 +16,7 @@ export async function proxy(request: NextRequest){
 
 export const config = {
   matcher: [
-    `/products/:path`, 
+    `/products/:path`,
+    `/update-profile` 
 ],
 };

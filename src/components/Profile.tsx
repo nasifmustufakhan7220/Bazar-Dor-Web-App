@@ -1,6 +1,7 @@
 "use client"
 import { signOut, useSession } from "@/lib/auth-client";
 import Image from "next/image";
+import Link from "next/link";
 import { FaChevronDown, FaUser, FaSignOutAlt } from "react-icons/fa";
 
 const Profile = () => {
@@ -51,7 +52,8 @@ const Profile = () => {
         </div>
 
         {/* My Profile */}
-        <div
+       <Link href={`/update-profile`}>
+         <div
           className="flex cursor-pointer items-center gap-2.5 py-1.5
           text-[15px] text-[#26332c] transition-colors
           hover:text-green-700"
@@ -59,6 +61,7 @@ const Profile = () => {
           <FaUser className="text-[14px] text-[#6084a0]" />
           <span>আমার প্রোফাইল</span>
         </div>
+       </Link>
 
         {/* Sign Out */}
         <div

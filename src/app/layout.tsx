@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import NavLinks from "@/components/navlink/NavLinks";
 import Marquee from "@/components/Marquee";
 import Footer from "@/components/Footer";
-import ContextApi from "@/context/contextApi";
 
 const HindSiliguri = Hind_Siliguri({
   subsets: ["bengali"],
@@ -26,13 +25,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${HindSiliguri.className} h-full antialiased`}
     >
       <body className="min-h-full bg-[#f0f5f0] flex flex-col">
-        <ContextApi>
+
           <Header />
           <NavLinks />
           <Marquee />
           <main className="">{children}</main>
           <Footer />
-        </ContextApi>
+
       </body>
     </html>
   );

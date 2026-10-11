@@ -1,4 +1,3 @@
-
 import { HindSiliguri } from "@/app/layout";
 import { IMarqueeText } from "@/types/bazarDor.types";
 import Image from "next/image";
@@ -20,9 +19,9 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
 
   const toBangla = (number: number) => {
     return new Intl.NumberFormat("bn-BD", {
-    useGrouping: false,
-    maximumFractionDigits: 2,
-  }).format(number);
+      useGrouping: false,
+      maximumFractionDigits: 2,
+    }).format(number);
   };
 
   const priceSummary = [
@@ -199,7 +198,9 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
             </div>
 
             {/* Tablet & Desktop View: Table Layout */}
-            <div className={`${HindSiliguri.className} hidden overflow-x-auto rounded-xl border border-[#dfe8df] md:block`}>
+            <div
+              className={`${HindSiliguri.className} hidden overflow-x-auto rounded-xl border border-[#dfe8df] md:block`}
+            >
               <table className="w-full min-w-162.5 table-fixed border-collapse text-base">
                 <thead>
                   <tr className="bg-[#f7faf7] text-gray-500">
@@ -241,7 +242,7 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
                         {item.division}
                       </td>
 
-                      <td className="whitespace-nowrap px-4 py-4 text-right font-medium text-green-700">
+                      <td className="whitespace-nowrap px-4 py-4 text-right text-base font-semibold text-green-700">
                         {toBangla(item.min)} টাকা
                       </td>
 
@@ -258,7 +259,6 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
               </table>
             </div>
           </div>
-         
         </div>
       </div>
     </section>

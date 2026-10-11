@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FaRegCircleUser } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
+import Image from "next/image";
 
 const ProfilePage = () => {
   const router = useRouter();
@@ -77,7 +78,11 @@ const ProfilePage = () => {
           <section className="mb-4 flex flex-col items-start justify-between gap-4 rounded-xl border border-[#e0e8e0] bg-[#fbfdfb] p-4 sm:flex-row sm:items-center sm:px-5 sm:py-4">
             <div className="flex cursor-pointer items-center justify-center gap-2.5 rounded-full px-2 py-1.5">
               <div className="flex h-10.5 w-10.5 items-center justify-center rounded-full">
-                <FaRegCircleUser className="text-2xl" />
+               {
+                           data?.user?.image ? <>
+                             <Image className="rounded-2xl" src={`${data?.user?.image}`} alt="" width={30} height={30} />
+                           </> : <><FaRegCircleUser className="text-2xl" /></>
+                         }
               </div>
 
               <span className="text-base font-medium text-[#26332c]">

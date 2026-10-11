@@ -1,2 +1,73 @@
 @import "tailwindcss";
+@import "@heroui/styles"; 
 @plugin "daisyui";
+
+
+
+
+
+/* Bazar Dor - Custom Toast Design */
+
+.bazar-toast-container {
+  font-family: inherit;
+}
+
+.bazar-toast {
+  border: 1px solid #dcebe0 !important;
+  border-radius: 14px !important;
+  background: #ffffff !important;
+  color: #26332b !important;
+  box-shadow: 0 10px 35px rgba(6, 59, 39, 0.12) !important;
+  padding: 10px 12px !important;
+  min-height: 64px !important;
+  font-size: 13px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.Toastify__toast--success {
+  border-left: 4px solid #07883e !important;
+}
+
+.Toastify__toast--error {
+  border-left: 4px solid #dc2626 !important;
+}
+
+.Toastify__toast--info {
+  border-left: 4px solid #0284c7 !important;
+}
+
+.Toastify__toast--warning {
+  border-left: 4px solid #d97706 !important;
+}
+
+.Toastify__progress-bar--success {
+  background: #07883e !important;
+}
+
+.Toastify__progress-bar--error {
+  background: #dc2626 !important;
+}
+
+.Toastify__close-button {
+  color: #64746a !important;
+  opacity: 0.8;
+}
+
+.Toastify__close-button:hover {
+  color: #07883e !important;
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .Toastify__toast-container {
+    width: calc(100% - 24px) !important;
+    left: 12px !important;
+    right: 12px !important;
+    top: 12px !important;
+  }
+
+  .bazar-toast {
+    border-radius: 12px !important;
+  }
+}

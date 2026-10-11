@@ -1,5 +1,9 @@
 import Image from "next/image";
 import { cacheLife } from "next/cache";
+import UseSession from "./UseSession";
+
+
+
 
 const Header = async () => {
   const updateDate = async () => {
@@ -44,13 +48,7 @@ const Header = async () => {
 
         {/* Auth */}
         <div className="flex shrink-0 gap-2 sm:gap-3">
-          <button className="btn btn-ghost btn-sm px-2 text-[12px] font-semibold sm:btn-md sm:px-3 sm:text-[14px]">
-            সাইন ইন
-          </button>
-
-          <button className="btn btn-sm bg-[#068a3f] px-3 text-[12px] text-[#f2faf3] sm:btn-md sm:px-4 sm:text-[14px]">
-            সাইন আপ
-          </button>
+          <UseSession/>
         </div>
       </div>
     </div>

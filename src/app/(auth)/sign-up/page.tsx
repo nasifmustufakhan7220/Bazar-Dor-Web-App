@@ -13,7 +13,7 @@ import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { useState } from "react";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
@@ -60,6 +60,21 @@ const SignUpPage = () => {
       return;
     }
   };
+
+  const handelSingInWithGoggle = async()=>{
+    const {data,error}= await signIn.social({
+      provider:"google"
+    });
+
+    console.log(data,error);
+  }
+
+  const handelSingInWithGithub= async()=>{
+    const {data,error}= await signIn.social({
+      provider:"github"
+    });
+    console.log(data,error);
+  }
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#f0f5f1] px-4 py-10">
       <div className="w-full max-w-82.5">
@@ -185,7 +200,7 @@ const SignUpPage = () => {
 
           {/* Social Login Buttons */}
           <div className="grid grid-cols-2 gap-2">
-            <Button
+            <Button onClick={handelSingInWithGoggle}
               type="button"
               variant="outline"
               className="flex h-8 items-center justify-center gap-1 rounded-md border border-[#e0e8e1] bg-transparent px-1 text-[11px] font-medium text-[#29352d] hover:bg-gray-50"
@@ -194,7 +209,7 @@ const SignUpPage = () => {
               Google দিয়ে চালিয়ে যান
             </Button>
 
-            <Button
+            <Button onClick={handelSingInWithGithub}
               type="button"
               variant="outline"
               className="flex h-8 items-center justify-center gap-1 rounded-md border border-[#e0e8e1] bg-transparent px-1 text-[11px] font-medium text-[#29352d] hover:bg-gray-50"

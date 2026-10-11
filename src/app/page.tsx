@@ -1,3 +1,4 @@
+import GoogleSignInToast from "@/components/GoggleToast";
 import Hero from "@/components/Hero";
 import AllProducts from "@/components/The Product Sections (Home Page)/AllProducts";
 import HomePageSkeleton from "@/components/The Product Sections (Home Page)/HomeSkeleton";
@@ -17,6 +18,10 @@ export default function Home() {
       </Suspense>
       <Suspense fallback={<HomePageSkeleton/>}>
         <AllProducts />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <GoogleSignInToast />
       </Suspense>
     </div>
   );

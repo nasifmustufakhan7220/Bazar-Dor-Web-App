@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -27,12 +26,12 @@ const Hero = () => {
           </p>
 
           {/* CTA */}
-          <Link
-            href="#সব-পণ্য"
+          <a
+            href="#all-products"
             className="mt-7 inline-flex items-center rounded-lg bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-800"
           >
             সব পণ্য দেখুন
-          </Link>
+          </a>
         </div>
 
         {/* Right Image */}

@@ -1,3 +1,5 @@
+
+import { HindSiliguri } from "@/app/layout";
 import { IMarqueeText } from "@/types/bazarDor.types";
 import Image from "next/image";
 
@@ -196,7 +198,7 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
             </div>
 
             {/* Tablet & Desktop View: Table Layout */}
-            <div className="hidden overflow-x-auto rounded-xl border border-[#dfe8df] md:block">
+            <div className={`${HindSiliguri.className} hidden overflow-x-auto rounded-xl border border-[#dfe8df] md:block`}>
               <table className="w-full min-w-162.5 table-fixed border-collapse text-base">
                 <thead>
                   <tr className="bg-[#f7faf7] text-gray-500">

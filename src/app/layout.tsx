@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
@@ -8,7 +9,7 @@ import Footer from "@/components/Footer";
 import "react-toastify/ReactToastify.css";
 import { Suspense } from "react";
 
-const HindSiliguri = Hind_Siliguri({
+export const HindSiliguri = Hind_Siliguri({
   subsets: ["bengali"],
   weight: ["400", "500", "600", "700"],
   display: "swap",

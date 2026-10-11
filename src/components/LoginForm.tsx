@@ -67,6 +67,13 @@ const LoginForm = () => {
 
     console.log(userData, error);
   }
+
+  const handelSignInWithGithub = async()=>{
+    const {data:userData, error} =await signIn.social({
+      provider:"github"
+    });
+    console.log(userData, error);
+  }
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#f0f5f1] px-4 py-10">
       <div className="w-full max-w-82.5">
@@ -159,6 +166,7 @@ const LoginForm = () => {
             </Button>
 
             <Button
+            onClick={handelSignInWithGithub}
               type="button"
               variant="outline"
               className="flex h-8 items-center justify-center gap-1 rounded-md border border-[#e0e8e1] bg-transparent px-1 text-[11px] font-medium text-[#29352d] hover:bg-gray-50"

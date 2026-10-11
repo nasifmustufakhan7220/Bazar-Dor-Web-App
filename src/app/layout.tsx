@@ -10,7 +10,8 @@ import { Suspense } from "react";
 
 const HindSiliguri = Hind_Siliguri({
   subsets: ["bengali"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -27,16 +28,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${HindSiliguri.className} h-full antialiased`}
     >
       <body className="min-h-full bg-[#f0f5f0] flex flex-col">
-        
         <Header />
         <NavLinks />
-    
+
         <Suspense fallback={<p>Loading...</p>}>
-        <Marquee />
-        
+          <Marquee />
         </Suspense>
         <main className="">{children}</main>
-        
+
         <Footer />
       </body>
     </html>

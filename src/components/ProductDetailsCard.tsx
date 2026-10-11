@@ -11,7 +11,7 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
   const avg = (min + max) / 2;
   const convertText: Record<string, string> = {
     dozen: "ডজন",
-    liter: "লিটার",
+    litre: "লিটার",
     kg: "কেজি",
     piece: "পিস",
   };
@@ -52,7 +52,7 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
             {/* Product Info */}
             <div className="flex items-center gap-3">
               <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[#f1f5f1] text-4xl">
-                🍚
+                {data.image}
               </div>
 
               <div className="min-w-0">
@@ -197,7 +197,7 @@ const ProductDetailsCard = ({ data }: { data: IMarqueeText }) => {
 
             {/* Tablet & Desktop View: Table Layout */}
             <div className="hidden overflow-x-auto rounded-xl border border-[#dfe8df] md:block">
-              <table className="w-full min-w-162.5 table-fixed border-collapse text-sm">
+              <table className="w-full min-w-162.5 table-fixed border-collapse text-base">
                 <thead>
                   <tr className="bg-[#f7faf7] text-gray-500">
                     <th className="w-[28%] px-4 py-4 text-left font-medium">

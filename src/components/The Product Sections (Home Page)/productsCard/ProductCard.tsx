@@ -9,6 +9,10 @@ const ProductCard = ({ card }: { card: IMarqueeText }) => {
     kg: "কেজি",
     piece: "পিস",
   };
+
+  const toBangal = (number:number)=>{
+    return number.toString().replace(/\d/g,(digit)=>"০১২৩৪৫৬৭৮৯"[Number(digit)])
+  }
   return (
    <Link href={`/products/${card.id}`} className="block h-full">
      <div className="h-full w-full cursor-pointer rounded-[18px] border border-[#dce4dd] bg-[#f9fbf9] px-4 py-4 sm:px-4.5 sm:py-4.5">
@@ -39,7 +43,7 @@ const ProductCard = ({ card }: { card: IMarqueeText }) => {
             <p className="text-[14px] leading-none text-[#202923]">আজকের দাম</p>
 
             <p className="mt-2 text-[22px] font-bold leading-none text-[#202923]">
-              {card.today}
+              {toBangal(card.today)}
               <span className="ml-1 text-[17px] font-normal">টাকা</span>
             </p>
           </div>

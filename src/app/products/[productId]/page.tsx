@@ -1,5 +1,7 @@
 import { IMarqueeText } from "@/types/bazarDor.types";
 import ProductDetailsCard from "@/components/ProductDetailsCard";
+import { Suspense } from "react";
+import BazarDorSkeleton from "@/components/ProductDetailsSkeleton/ProductDetailsSkeleton";
 
 export const instant = false
 
@@ -11,7 +13,9 @@ const ProductDetailsPage = async({params}:{params:Promise<{productId:string}>}) 
     
     return (
         <div className="mx-auto max-w-5xl">
-            <ProductDetailsCard data={data} />
+            <Suspense fallback={<BazarDorSkeleton/>}>
+                <ProductDetailsCard data={data} />
+            </Suspense>
         </div>
     );
 };

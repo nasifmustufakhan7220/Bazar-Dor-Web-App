@@ -138,6 +138,16 @@ const LoginForm = () => {
                 </InputGroup>
               </TextField>
 
+              {/* Forgot Password Link */}
+              <div className="-mt-1 text-right">
+                <Link
+                  href="/forgot-password"
+                  className="text-[11px] font-medium text-[#07883e] hover:underline"
+                >
+                  পাসওয়ার্ড ভুলে গেছেন?
+                </Link>
+              </div>
+
               {/* Confirm Password */}
 
               {/* Create Account Button */}

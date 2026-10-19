@@ -19,7 +19,8 @@ import { useRouter } from "next/navigation";
 
 const SignUpPage = () => {
   const router = useRouter();
-  const [visible, setIsvisible] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [confirmVisible, setConfirmVisible] = useState(false);
 
   const handelSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -150,7 +151,7 @@ const SignUpPage = () => {
                       size="sm"
                       variant="ghost"
                       className="size-7 min-w-7 rounded-md text-gray-500 hover:bg-gray-100 hover:text-[#07883e]"
-                      onPress={() => setIsvisible(!visible)}
+                      onPress={() => setVisible(!visible)}
                     >
                       {visible ? (
                         <Eye className="size-4" />
@@ -173,7 +174,7 @@ const SignUpPage = () => {
 
                 <InputGroup className="h-9 w-full overflow-hidden rounded-lg border border-[#e0e8e1] bg-white transition focus-within:border-[#07883e] focus-within:ring-2 focus-within:ring-[#07883e]/10">
                   <InputGroup.Input
-                    type={visible ? "text" : "password"}
+                    type={confirmVisible ? "text" : "password"}
                     placeholder="পাসওয়ার্ড আবার লিখুন"
                     className="h-full min-w-0 flex-1 border-0 bg-transparent px-2.5 text-xs outline-none"
                   />
@@ -182,13 +183,15 @@ const SignUpPage = () => {
                     <Button
                       type="button"
                       isIconOnly
-                      aria-label={visible ? "Hide password" : "Show password"}
+                      aria-label={
+                        confirmVisible ? "Hide password" : "Show password"
+                      }
                       size="sm"
                       variant="ghost"
                       className="size-7 min-w-7 rounded-md text-gray-500 hover:bg-gray-100 hover:text-[#07883e]"
-                      onPress={() => setIsvisible(!visible)}
+                      onPress={() => setConfirmVisible(!confirmVisible)}
                     >
-                      {visible ? (
+                      {confirmVisible ? (
                         <Eye className="size-4" />
                       ) : (
                         <EyeSlash className="size-4" />
